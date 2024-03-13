@@ -11,17 +11,8 @@ const productRouter = require("./routes/product");
 
 const mongoose = require("mongoose");
 
-// mongoose
-//   .connect("mongodb+srv://database:3033@atlas-demo.bxquots.mongodb.net/customers?retryWrites=true&w=majority&appName=atlas-demo")
-//   .then(() => {
-//     console.log("Connect to mongodb");
-//   })
-//   .catch((error) => {
-//     console.log(error);
-//   });
-
 mongoose
-  .connect("mongodb+srv://thehuy78:passwordne@huy.jjdbnre.mongodb.net/test?retryWrites=true&w=majority&appName=huy")
+  .connect("mongodb+srv://database:3033@atlas-demo.bxquots.mongodb.net/customers?retryWrites=true&w=majority&appName=atlas-demo")
   .then(() => {
     console.log("Connect to mongodb");
   })
