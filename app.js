@@ -6,11 +6,12 @@ var logger = require("morgan");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
+const customerRouter = require("./routes/customers");
 
 const mongoose = require("mongoose");
 
 mongoose
-  .connect("mongodb+srv://database:3033@cloud-data.0r5orgy.mongodb.net/test?retryWrites=true&w=majority&appName=cloud-data")
+  .connect("mongodb+srv://database:3033@atlas-demo.bxquots.mongodb.net/customers?retryWrites=true&w=majority&appName=atlas-demo")
   .then(() => {
     console.log("Connect to mongodb");
   })
@@ -32,6 +33,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use("/customers", customerRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
