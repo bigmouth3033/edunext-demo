@@ -7,25 +7,20 @@ var logger = require("morgan");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
-
-const mongoose = require('mongoose')
-const URL = 'mongodb+srv://database:3033@cloud-data.0r5orgy.mongodb.net/?retryWrites=true&w=majority&appName=cloud-data'
+const mongoose = require("mongoose");
+const URL = "mongodb+srv://database:3033@cloud-data.0r5orgy.mongodb.net/test?retryWrites=true&w=majority&appName=cloud-data";
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(
-      URL,
-      { useNewUrlParser: true, useUnifiedTopology: true }
-    )
-    console.log('Connected to mongoDB')
+    await mongoose.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true });
+    console.log("Connected to mongoDB");
   } catch (error) {
-    console.log(error)
-    process.exit(1)
+    console.log(error);
+    process.exit(1);
   }
-}
+};
 
-connectDB()
-
+connectDB();
 
 var app = express();
 
