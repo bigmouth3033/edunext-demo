@@ -20,9 +20,16 @@ const connectDB = async () => {
   }
 };
 
-connectDB();
+const mongoose = require("mongoose");
 
-var app = express();
+mongoose
+  .connect("mongodb+srv://database:3033@cloud-data.0r5orgy.mongodb.net/test?retryWrites=true&w=majority&appName=cloud-data")
+  .then(() => {
+    console.log("Connect to mongodb");
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
