@@ -7,11 +7,21 @@ var logger = require("morgan");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 const customerRouter = require("./routes/customers");
+const productRouter = require("./routes/product");
 
 const mongoose = require("mongoose");
 
+// mongoose
+//   .connect("mongodb+srv://database:3033@atlas-demo.bxquots.mongodb.net/customers?retryWrites=true&w=majority&appName=atlas-demo")
+//   .then(() => {
+//     console.log("Connect to mongodb");
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
+
 mongoose
-  .connect("mongodb+srv://database:3033@atlas-demo.bxquots.mongodb.net/customers?retryWrites=true&w=majority&appName=atlas-demo")
+  .connect("mongodb+srv://thehuy78:passwordne@huy.jjdbnre.mongodb.net/test?retryWrites=true&w=majority&appName=huy")
   .then(() => {
     console.log("Connect to mongodb");
   })
@@ -34,6 +44,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/customers", customerRouter);
+app.use("/product", productRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
