@@ -1,0 +1,24 @@
+extends ../layout 
+
+block content
+  table 
+    thead 
+      tr 
+        th EMAIL 
+        th PASSWORD
+        th FULLNAME
+        th PHONE 
+        th IMAGE
+    tbody   
+      if users != ""
+        each user in users 
+          tr 
+            td= user.email
+            td= user.password 
+            td= user.fullname
+            td= user.phone 
+            td= user.image 
+      else 
+        tr 
+          td(colspan="4") NO DATA
+
