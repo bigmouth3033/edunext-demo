@@ -8,7 +8,7 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
 const mongoose = require("mongoose");
-mongoose.connect("mongodb+srv://database:3033@cloud-data.0r5orgy.mongodb.net/test?retryWrites=true&w=majority&appName=cloud-data");
+mongoose.connect("mongodb+srv://database:3033@cloud-data.0r5orgy.mongodb.net/?retryWrites=true&w=majority&appName=cloud-data");
 
 var app = express();
 
